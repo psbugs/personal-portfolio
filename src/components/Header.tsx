@@ -9,7 +9,7 @@ const Header = ({ scrollToSection }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleResumeClick = () => {
-    window.open('./resume.pdf', '_blank');
+    window.open('/assets/files/resume.pdf', '_blank');
   };
 
   return (

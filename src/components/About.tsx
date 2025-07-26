@@ -1,14 +1,39 @@
 
 const About = () => {
-  const technologies = [
-    { name: "React", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=100&h=100&fit=crop" },
-    { name: "Node.js", image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=100&h=100&fit=crop" },
-    { name: "MongoDB", image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=100&h=100&fit=crop" },
-    { name: "JavaScript", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=100&h=100&fit=crop" },
-    { name: "TypeScript", image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=100&h=100&fit=crop" },
-    { name: "Express.js", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=100&h=100&fit=crop" }
-  ];
-
+const technologies = [
+  {
+    name: "React",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  },
+  {
+    name: "Redux",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
+  },
+  {
+    name: "Node.js",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+  },
+  {
+    name: "Express.js",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+  },
+  {
+    name: "MongoDB",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+  },
+  {
+    name: "JavaScript",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  },
+  {
+    name: "TypeScript",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+  },
+  {
+    name: "CSS",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+  }
+];
   return (
     <section id="about" className="py-20 px-6 bg-slate-800/30">
       <div className="container mx-auto max-w-6xl">
@@ -28,7 +53,7 @@ const About = () => {
                   {/* Profile Image */}
                   <div className="flex justify-center mb-6">
                     <img
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxHOevw5gRupD1c09SrGrx6LUIqTiP9Mh-SQ&s"
+                      src="/assets/images/praveen-2025-profile-pic.jpg"
                       alt="Praveen Sunhare"
                       className="w-32 h-32 rounded-full border-4 border-blue-500 shadow-lg object-cover"
                     />
