@@ -1,41 +1,48 @@
-
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 px-6">
+    <section
+      id="contact"
+      className="py-20 px-6 bg-white text-black dark:bg-slate-800/30 dark:text-white transition-colors duration-300"
+    >
       <div className="container mx-auto max-w-4xl text-center">
+        {/* Heading */}
         <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Get In Touch
           </h2>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-            I'm always interested in new opportunities and collaborations. 
+          <p className="text-xl text-gray-700 dark:text-slate-400 max-w-2xl mx-auto">
+            I'm always interested in new opportunities and collaborations.
             Let's discuss how we can work together!
           </p>
         </div>
 
-        <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 md:p-12 border border-slate-700/50 mb-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
-            <div className="text-left">
-              <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4">
+        {/* Contact Card */}
+        <div className="bg-gray-100 dark:bg-slate-800/40 backdrop-blur-sm rounded-2xl p-6 sm:p-8 md:p-12 border border-gray-200 dark:border-slate-700/40 mb-12 transition-colors duration-300">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start text-left">
+            {/* Left Info */}
+            <div>
+              <h3 className="text-xl sm:text-2xl font-semibold mb-4">
                 Let's Start a Conversation
               </h3>
-              <p className="text-slate-300 mb-6 leading-relaxed text-sm sm:text-base">
-                Whether you have a project in mind, want to discuss opportunities, or just want to say hello, I'd love to hear from you. Drop me an email and I'll get back to you as soon as possible.              </p>
+              <p className="text-gray-800 dark:text-slate-300 mb-6 leading-relaxed text-sm sm:text-base">
+                Whether you have a project in mind, want to discuss opportunities, or just want to say hello, I'd love to hear from you. Drop me an email and I'll get back to you as soon as possible.
+              </p>
 
               <div className="flex items-center space-x-3 mb-3">
                 <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                <span className="text-slate-400 text-sm sm:text-base">Available for freelance work</span>
+                <span className="text-gray-800 dark:text-slate-400 text-sm sm:text-base">Available for freelance work</span>
               </div>
               <div className="flex items-center space-x-3 mb-3">
                 <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                <span className="text-slate-400 text-sm sm:text-base">Open to full-time opportunities</span>
+                <span className="text-gray-800 dark:text-slate-400 text-sm sm:text-base">Open to full-time opportunities</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                <span className="text-slate-400 text-sm sm:text-base">Available for consultations</span>
+                <span className="text-gray-800 dark:text-slate-400 text-sm sm:text-base">Available for consultations</span>
               </div>
             </div>
 
+            {/* Email Card */}
             <div className="text-center md:text-right flex flex-col items-center md:items-end">
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-4 sm:p-6 w-full max-w-xs">
                 <h4 className="text-white font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Email Me</h4>
@@ -47,7 +54,7 @@ const Contact = () => {
                 </a>
               </div>
 
-              <p className="text-slate-400 text-xs sm:text-sm mt-4 mb-2">
+              <p className="text-gray-700 dark:text-slate-400 text-xs sm:text-sm mt-4 mb-2">
                 I typically respond within 24 hours
               </p>
 
@@ -61,20 +68,21 @@ const Contact = () => {
           </div>
         </div>
 
-
+        {/* Info Cards */}
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 border border-slate-700/30">
-            <h4 className="text-white font-semibold mb-2">Response Time</h4>
-            <p className="text-slate-400 text-sm">Usually within 24 hours</p>
-          </div>
-          <div className="bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 border border-slate-700/30">
-            <h4 className="text-white font-semibold mb-2">Preferred Contact</h4>
-            <p className="text-slate-400 text-sm">Email for detailed discussions</p>
-          </div>
-          <div className="bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 border border-slate-700/30">
-            <h4 className="text-white font-semibold mb-2">Time Zone</h4>
-            <p className="text-slate-400 text-sm">IST (GMT+5:30)</p>
-          </div>
+          {[
+            ['Response Time', 'Usually within 24 hours'],
+            ['Preferred Contact', 'Email for detailed discussions'],
+            ['Time Zone', 'IST (GMT+5:30)']
+          ].map(([title, desc], index) => (
+            <div
+              key={index}
+              className="bg-gray-100 dark:bg-slate-800/40 backdrop-blur-sm rounded-xl p-6 border border-gray-200 dark:border-slate-700/40 transition-colors duration-300"
+            >
+              <h4 className="font-semibold mb-2">{title}</h4>
+              <p className="text-gray-700 dark:text-slate-400 text-sm">{desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

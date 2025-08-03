@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { ArrowUp, Github, Linkedin, Instagram } from 'lucide-react';
 import Header from '../components/Header';
@@ -14,7 +13,6 @@ const Index = () => {
     const handleScroll = () => {
       setShowBackToTop(window.scrollY > 300);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -31,7 +29,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-200 to-slate-50 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 transition-colors duration-300">
       <Header scrollToSection={scrollToSection} />
 
       <main>
@@ -42,14 +40,14 @@ const Index = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-slate-900/80 backdrop-blur-sm border-t border-slate-700/50 py-8">
+      <footer className="bg-slate-100/80 dark:bg-slate-900/80 backdrop-blur-sm border-t border-slate-300 dark:border-slate-700/50 py-8 transition-colors duration-300">
         <div className="container mx-auto px-6 text-center">
           <div className="flex justify-center space-x-6 mb-4">
             <a
               href="https://linkedin.com/in/praveen-sunhare-5b3341128"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-blue-400 transition-colors duration-300"
+              className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
             >
               <Linkedin size={24} />
             </a>
@@ -57,7 +55,7 @@ const Index = () => {
               href="https://github.com/psbugs"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-blue-400 transition-colors duration-300"
+              className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
             >
               <Github size={24} />
             </a>
@@ -65,12 +63,12 @@ const Index = () => {
               href="https://instagram.com/_praveen.sunhare_"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-blue-400 transition-colors duration-300"
+              className="text-slate-600 dark:text-slate-400 hover:text-pink-600 dark:hover:text-pink-400 transition-colors duration-300"
             >
               <Instagram size={24} />
             </a>
           </div>
-          <p className="text-slate-400 text-sm">
+          <p className="text-slate-600 dark:text-slate-400 text-sm">
             © 2025 Praveen Sunhare. All rights reserved.
           </p>
         </div>

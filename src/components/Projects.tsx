@@ -1,11 +1,10 @@
-
 const Projects = () => {
   const projects = [
     {
       title: "LoveMedia",
       description: "Full-stack e-commerce solution with React JS, Node.js, Express JS and MongoDB",
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhNE15JFu9jbUGmICmlGqbAR7In8FiwUp6rQ&s",
-      technologies: ["React", "Node.js", "MongoDB", "Express","HTML5","CSS3" ,"Stripe","AWS S3"],
+      technologies: ["React", "Node.js", "MongoDB", "Express", "HTML5", "CSS3", "Stripe", "AWS S3"],
       demoLink: "https://lovemedia.world",
       githubLink: "https://github.com/praveen-sunhare/ecommerce"
     },
@@ -28,13 +27,13 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 px-6">
+    <section id="projects" className="py-20 px-6 bg-white dark:bg-slate-800/30 transition-colors duration-500">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Featured Projects
           </h2>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 dark:text-slate-400 max-w-2xl mx-auto">
             Here are some of my recent projects that showcase my skills and passion for development
           </p>
         </div>
@@ -43,7 +42,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 hover:scale-105 group"
+              className="bg-gray-100 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-200 dark:border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 hover:scale-105 group"
             >
               <div className="relative overflow-hidden">
                 <img
@@ -51,14 +50,14 @@ const Projects = () => {
                   alt={project.title}
                   className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent dark:from-slate-900/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-2">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                   {project.title}
                 </h3>
-                <p className="text-slate-400 mb-4 text-sm leading-relaxed">
+                <p className="text-gray-700 dark:text-slate-400 mb-4 text-sm leading-relaxed">
                   {project.description}
                 </p>
 
@@ -66,7 +65,7 @@ const Projects = () => {
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full text-xs font-medium"
+                      className="px-3 py-1 bg-blue-100 dark:bg-blue-600/20 text-blue-800 dark:text-blue-300 rounded-full text-xs font-medium"
                     >
                       {tech}
                     </span>
@@ -86,7 +85,7 @@ const Projects = () => {
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 border border-slate-600 hover:border-blue-500 text-slate-300 hover:text-blue-400 text-center py-2 px-4 rounded-lg transition-colors duration-300 text-sm"
+                    className="flex-1 border border-gray-300 dark:border-slate-600 hover:border-blue-500 text-gray-800 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 text-center py-2 px-4 rounded-lg transition-colors duration-300 text-sm"
                   >
                     GitHub
                   </a>
