@@ -3,6 +3,8 @@ import App from './App.tsx'
 import './index.css'
 
 import AOS from 'aos';
+import './i18n';
+
 import 'aos/dist/aos.css';
 
 AOS.init({
