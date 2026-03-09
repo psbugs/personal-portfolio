@@ -17,7 +17,7 @@ const Projects = () => {
       image:
         "https://apps.solugenix.com/sentriom/assets/Office_Signage.png",
       technologies: [
-        { name: "NestJS", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg" },
+        { name: "NestJS", image: "https://nestjs.com/logo-small-gradient.0ed287ce.svg" },
         { name: "MongoDB", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain.svg" },
         { name: "Angular 18", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
         { name: "AI" },
