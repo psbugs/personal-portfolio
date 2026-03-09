@@ -69,7 +69,7 @@ const Index = () => {
             </a>
           </div>
           <p className="text-slate-600 dark:text-slate-400 text-sm">
-            © 2025 Praveen Sunhare. All rights reserved.
+            © 2026 Praveen Sunhare. All rights reserved.
           </p>
         </div>
       </footer>
