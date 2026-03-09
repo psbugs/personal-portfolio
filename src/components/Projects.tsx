@@ -4,14 +4,46 @@ import React, { useEffect, useState } from "react";
 const Projects = () => {
   const [loading, setLoading] = useState(true);
 
+  interface Tech {
+    name: string;
+    image?: string;
+  }
+
   const projects = [
+    {
+      title: "Sentriom",
+      description:
+        "An in-house AI-based product for Solugenix. A conversational ChatGPT clone supporting file uploads and all OpenAI models in a secure application to leverage AI.",
+      image:
+        "https://apps.solugenix.com/sentriom/assets/Office_Signage.png",
+      technologies: [
+        { name: "NestJS", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg" },
+        { name: "MongoDB", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain.svg" },
+        { name: "Angular 18", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
+        { name: "AI" },
+        { name: "OpenAI" },
+        { name: "Python", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+      ],
+      demoLink: "https://apps.solugenix.com/sentriom/login",
+      githubLink: "",
+    },
     {
       title: "LoveMedia",
       description:
         "Full-stack e-commerce solution with React JS, Node.js, Express JS and MongoDB",
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhNE15JFu9jbUGmICmlGqbAR7In8FiwUp6rQ&s",
-      technologies: ["React", "Node.js", "MongoDB", "Express", "HTML5", "CSS3", "Stripe", "AWS S3"],
+      technologies: [
+        { name: "React", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "Node.js", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg" },
+        { name: "MongoDB", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain.svg" },
+        { name: "Express" },
+        { name: "HTML5" },
+        { name: "CSS3" },
+        { name: "Stripe" },
+        { name: "AWS S3" },
+        { name: "MySQL", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+      ],
       demoLink: "https://lovemedia.world",
       githubLink: "https://github.com/praveen-sunhare/ecommerce",
     },
@@ -21,7 +53,11 @@ const Projects = () => {
         "A Car Marketplace is a web platform that allows users to buy, sell, and browse new or used cars, with features like search filters, listings, pricing, and user authentication.",
       image:
         "https://www.shutterstock.com/image-vector/deal-car-logo-design-vector-600nw-2324097589.jpg",
-      technologies: ["React", "Tailwind Css", "Redux"],
+      technologies: [
+        { name: "React", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "Tailwind Css" },
+        { name: "Redux" },
+      ],
       demoLink: "https://marketplace2-switcher.pixel-base.de/",
       githubLink: "https://github.com/praveen-sunhare/taskapp",
     },
@@ -31,7 +67,12 @@ const Projects = () => {
         "An Admin Panel built with React.js, Node.js, Express.js, and MongoDB provides a secure and intuitive interface for administrators to manage users, media contents, domains, content packs, and system settings with full CRUD functionality, role-based access control, and real-time updates.",
       image:
         "https://www.shutterstock.com/image-vector/modern-admin-panel-icon-vector-260nw-1580556469.jpg",
-      technologies: ["React", "API Integration", "Express Js", "Tailwind"],
+      technologies: [
+        { name: "React", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "API Integration" },
+        { name: "Express Js" },
+        { name: "Tailwind" },
+      ],
       demoLink: "https://manage-uat.mediapad.dev/user",
       githubLink: "https://github.com/praveen-sunhare/weather",
     },
@@ -84,9 +125,16 @@ const Projects = () => {
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-3 py-1 bg-blue-100 dark:bg-blue-600/20 text-blue-800 dark:text-blue-300 rounded-full text-xs font-medium"
+                        className="flex items-center gap-1 px-3 py-1 bg-blue-100 dark:bg-blue-600/20 text-blue-800 dark:text-blue-300 rounded-full text-xs font-medium"
                       >
-                        {tech}
+                        {tech.image && (
+                          <img
+                            src={tech.image}
+                            alt={tech.name}
+                            className="h-4 w-4 object-contain"
+                          />
+                        )}
+                        {tech.name}
                       </span>
                     ))}
                   </div>

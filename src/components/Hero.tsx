@@ -6,7 +6,7 @@ const Hero = () => {
   const [isDeleting, setIsDeleting] = useState(false);
 
   const titles = [
-    'MERN Stack Developer',
+    'MERN/MEAN Stack Developer',
     'Full Stack Developer',
     'React Specialist',
     'JavaScript Expert'
