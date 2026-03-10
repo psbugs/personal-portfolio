@@ -40,16 +40,16 @@ const Index = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-slate-100/80 dark:bg-slate-900/80 backdrop-blur-sm border-t border-slate-300 dark:border-slate-700/50 py-8 transition-colors duration-300">
-        <div className="container mx-auto px-6 text-center">
-          <div className="flex justify-center space-x-6 mb-4">
+      <footer className="bg-slate-100/80 dark:bg-slate-900/80 backdrop-blur-sm border-t border-slate-300 dark:border-slate-700/50 py-6 sm:py-8 transition-colors duration-300">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
+          <div className="flex justify-center space-x-4 sm:space-x-6 mb-4">
             <a
               href="https://linkedin.com/in/praveen-sunhare-5b3341128"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
             >
-              <Linkedin size={24} />
+              <Linkedin size={20} className="sm:w-6 sm:h-6" />
             </a>
             <a
               href="https://github.com/psbugs"
@@ -57,7 +57,7 @@ const Index = () => {
               rel="noopener noreferrer"
               className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
             >
-              <Github size={24} />
+              <Github size={20} className="sm:w-6 sm:h-6" />
             </a>
             <a
               href="https://instagram.com/_praveen.sunhare_"
@@ -65,10 +65,10 @@ const Index = () => {
               rel="noopener noreferrer"
               className="text-slate-600 dark:text-slate-400 hover:text-pink-600 dark:hover:text-pink-400 transition-colors duration-300"
             >
-              <Instagram size={24} />
+              <Instagram size={20} className="sm:w-6 sm:h-6" />
             </a>
           </div>
-          <p className="text-slate-600 dark:text-slate-400 text-sm">
+          <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm">
             © 2026 Praveen Sunhare. All rights reserved.
           </p>
         </div>
@@ -78,10 +78,10 @@ const Index = () => {
       {showBackToTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50"
+          className="fixed bottom-4 sm:bottom-8 right-4 sm:right-8 bg-blue-600 hover:bg-blue-700 text-white p-2 sm:p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50"
           aria-label="Back to top"
         >
-          <ArrowUp size={20} />
+          <ArrowUp size={16} className="sm:w-5 sm:h-5" />
         </button>
       )}
     </div>

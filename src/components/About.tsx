@@ -27,47 +27,47 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" className="py-20 px-6 bg-white dark:bg-slate-800/30 transition-colors duration-500">
+    <section id="about" className="py-12 sm:py-20 px-4 sm:px-6 bg-white dark:bg-slate-800/30 transition-colors duration-500">
       <div className="container mx-auto max-w-6xl">
         {/* --- About Me Section --- */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+        <div className="text-center mb-8 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
             About Me
           </h2>
           <div className="flex justify-center mb-6">
             <img
               src="/assets/images/praveen-2025-profile-pic.jpg"
               alt="Praveen Sunhare"
-              className="w-32 h-32 rounded-full border-4 border-blue-500 shadow-lg object-cover"
+              className="w-24 sm:w-32 h-24 sm:h-32 rounded-full border-4 border-blue-500 shadow-lg object-cover"
             />
           </div>
         </div>
 
-        <div className="max-w-3xl mx-auto text-center space-y-6 mt-6 pb-[25px]">
-          <p className="text-lg leading-relaxed text-gray-700 dark:text-slate-300">
+        <div className="max-w-3xl mx-auto text-center space-y-4 sm:space-y-6 mt-4 sm:mt-6 pb-6 sm:pb-[25px]">
+          <p className="text-sm sm:text-base md:text-lg leading-relaxed text-gray-700 dark:text-slate-300">
             Hi! I'm <span className="font-semibold text-blue-600 dark:text-blue-400">Praveen Sunhare</span>,
             a passionate MERN/MEAN stack developer who enjoys building modern, scalable, and user-friendly
             web applications. I love transforming ideas into functional digital experiences using
             cutting-edge technologies.
           </p>
 
-          <p className="text-lg leading-relaxed text-gray-700 dark:text-slate-300">
+          <p className="text-sm sm:text-base md:text-lg leading-relaxed text-gray-700 dark:text-slate-300">
             My journey in web development started with curiosity about how websites work. Over time,
             it evolved into a professional career where I solve complex problems and build efficient
             applications using clean, maintainable code.
           </p>
 
-          <p className="text-lg leading-relaxed text-gray-700 dark:text-slate-300">
+          <p className="text-sm sm:text-base md:text-lg leading-relaxed text-gray-700 dark:text-slate-300">
             Outside of coding, I enjoy exploring new technologies, contributing to open-source projects,
             and sharing knowledge with the developer community. I'm always excited to collaborate on
             innovative projects that create real impact.
           </p>
         </div>
-        <div className="text-center mb-12">
-          <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
             Technologies I Work With
           </h3>
-          <p className="text-gray-600 dark:text-slate-400">
+          <p className="text-sm sm:text-base text-gray-600 dark:text-slate-400">
             Here are some of the technologies I use...
           </p>
         </div>
@@ -75,20 +75,20 @@ const About = () => {
         {loading ? (
           <SkillsSkeletonLoader rows={technologies.length} />
         ) : (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 sm:gap-4 md:gap-6">
             {technologies.map((tech, index) => (
               <div
                 key={index}
-                className="bg-gray-100 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-200 dark:border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 hover:scale-105 text-center group"
+                className="bg-gray-100 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 border border-gray-200 dark:border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 hover:scale-105 text-center group"
               >
-                <div className="w-16 h-16 mx-auto mb-3 rounded-lg overflow-hidden">
+                <div className="w-10 sm:w-12 md:w-16 h-10 sm:h-12 md:h-16 mx-auto mb-2 sm:mb-3 rounded-lg overflow-hidden">
                   <img
                     src={tech.image}
                     alt={tech.name}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                 </div>
-                <h4 className="text-gray-900 dark:text-white font-medium text-sm">{tech.name}</h4>
+                <h4 className="text-gray-900 dark:text-white font-medium text-xs sm:text-sm">{tech.name}</h4>
               </div>
             ))}
           </div>
