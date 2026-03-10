@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const { t } = useTranslation();
 
   const titles = [
-    'MERN/MEAN Stack Developer',
-    'Full Stack Developer',
-    'React Specialist',
-    'JavaScript Expert'
+    t('hero_title_1'),
+    t('hero_title_2'),
+    t('hero_title_3'),
+    t('hero_title_4')
   ];
 
   useEffect(() => {
@@ -40,9 +42,9 @@ const Hero = () => {
       <div className="text-center max-w-4xl mx-auto w-full">
         <div className="mb-6 sm:mb-8">
           <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6 animate-fade-in leading-tight">
-            Hi, I am{' '}
+            {t('hero_greeting')}{' '}
             <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-              Praveen
+              Praveen Sunhare
             </span>
           </h1>
 
@@ -55,8 +57,7 @@ const Hero = () => {
         </div>
 
         <p className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in">
-          Passionate about creating exceptional web experiences with modern technologies.
-          I build scalable, user-friendly applications that make a difference.
+          {t('hero_description')}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in">
@@ -64,13 +65,13 @@ const Hero = () => {
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg text-sm sm:text-base"
           >
-            View My Work
+            {t('hero_view_work')}
           </button>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 hover:bg-blue-600 hover:text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg transition-all duration-300 hover:scale-105 text-sm sm:text-base"
           >
-            Get In Touch
+            {t('hero_get_in_touch')}
           </button>
         </div>
 

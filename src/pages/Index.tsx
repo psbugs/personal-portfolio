@@ -5,9 +5,11 @@ import Hero from '../components/Hero';
 import Projects from '../components/Projects';
 import About from '../components/About';
 import Contact from '../components/Contact';
+import { useTranslation } from 'react-i18next';
 
 const Index = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,7 +71,7 @@ const Index = () => {
             </a>
           </div>
           <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm">
-            © 2026 Praveen Sunhare. All rights reserved.
+            {t('footer_copyright')}
           </p>
         </div>
       </footer>

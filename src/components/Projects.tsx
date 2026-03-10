@@ -1,8 +1,10 @@
 import ProjectSkeleton from "@/loaders/ProjectSkeletonLoader";
 import React, { useEffect, useState } from "react";
+import { useTranslation } from 'react-i18next';
 
 const Projects = () => {
   const [loading, setLoading] = useState(true);
+  const { t } = useTranslation();
 
   interface Tech {
     name: string;
@@ -88,10 +90,10 @@ const Projects = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-8 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
-            Featured Projects
+            {t('projects_title')}
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-slate-400 max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills and passion for development
+            {t('projects_subtitle')}
           </p>
         </div>
 
@@ -146,7 +148,7 @@ const Projects = () => {
                       rel="noopener noreferrer"
                       className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-3 rounded-lg transition-colors duration-300 text-xs sm:text-sm font-medium"
                     >
-                      Live Demo
+                      {t('live_demo')}
                     </a>
                     {project.githubLink && (
                       <a
@@ -155,7 +157,7 @@ const Projects = () => {
                         rel="noopener noreferrer"
                         className="flex-1 border border-gray-300 dark:border-slate-600 hover:border-blue-500 text-gray-800 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 text-center py-2 px-3 rounded-lg transition-colors duration-300 text-xs sm:text-sm font-medium"
                       >
-                        GitHub
+                        {t('github')}
                       </a>
                     )}
                   </div>
