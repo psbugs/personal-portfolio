@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import SkillsSkeletonLoader from "@/loaders/SkillsSkeletonLoader";
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
   const [loading, setLoading] = useState(true);
+  const { t } = useTranslation();
 
   const technologies = [
     { name: "React", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
@@ -32,7 +34,7 @@ const About = () => {
         {/* --- About Me Section --- */}
         <div className="text-center mb-8 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
-            About Me
+            {t('about_title')}
           </h2>
           <div className="flex justify-center mb-6">
             <img
@@ -45,30 +47,23 @@ const About = () => {
 
         <div className="max-w-3xl mx-auto text-center space-y-4 sm:space-y-6 mt-4 sm:mt-6 pb-6 sm:pb-[25px]">
           <p className="text-sm sm:text-base md:text-lg leading-relaxed text-gray-700 dark:text-slate-300">
-            Hi! I'm <span className="font-semibold text-blue-600 dark:text-blue-400">Praveen Sunhare</span>,
-            a passionate MERN/MEAN stack developer who enjoys building modern, scalable, and user-friendly
-            web applications. I love transforming ideas into functional digital experiences using
-            cutting-edge technologies.
+            {t('about_description_1')}
           </p>
 
           <p className="text-sm sm:text-base md:text-lg leading-relaxed text-gray-700 dark:text-slate-300">
-            My journey in web development started with curiosity about how websites work. Over time,
-            it evolved into a professional career where I solve complex problems and build efficient
-            applications using clean, maintainable code.
+            {t('about_description_2')}
           </p>
 
           <p className="text-sm sm:text-base md:text-lg leading-relaxed text-gray-700 dark:text-slate-300">
-            Outside of coding, I enjoy exploring new technologies, contributing to open-source projects,
-            and sharing knowledge with the developer community. I'm always excited to collaborate on
-            innovative projects that create real impact.
+            {t('about_description_3')}
           </p>
         </div>
         <div className="text-center mb-8 sm:mb-12">
           <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
-            Technologies I Work With
+            {t('technologies_title')}
           </h3>
           <p className="text-sm sm:text-base text-gray-600 dark:text-slate-400">
-            Here are some of the technologies I use...
+            {t('technologies_subtitle')}
           </p>
         </div>
 

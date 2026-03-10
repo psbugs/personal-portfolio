@@ -1,4 +1,7 @@
+import { useTranslation } from 'react-i18next';
+
 const Contact = () => {
+  const { t } = useTranslation();
   return (
     <section
       id="contact"
@@ -8,11 +11,10 @@ const Contact = () => {
         {/* Heading */}
         <div className="mb-8 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
-            Get In Touch
+            {t('contact_title')}
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-slate-400 max-w-2xl mx-auto">
-            I'm always interested in new opportunities and collaborations.
-            Let's discuss how we can work together!
+            {t('contact_subtitle')}
           </p>
         </div>
 
@@ -22,30 +24,30 @@ const Contact = () => {
             {/* Left Info */}
             <div>
               <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3 sm:mb-4">
-                Let's Start a Conversation
+                {t('contact_conversation_title')}
               </h3>
               <p className="text-gray-800 dark:text-slate-300 mb-4 sm:mb-6 leading-relaxed text-xs sm:text-sm md:text-base">
-                Whether you have a project in mind, want to discuss opportunities, or just want to say hello, I'd love to hear from you. Drop me an email and I'll get back to you as soon as possible.
+                {t('contact_description')}
               </p>
 
               <div className="flex items-center space-x-3 mb-2 sm:mb-3">
                 <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
-                <span className="text-gray-800 dark:text-slate-400 text-xs sm:text-sm md:text-base">Available for freelance work</span>
+                <span className="text-gray-800 dark:text-slate-400 text-xs sm:text-sm md:text-base">{t('contact_freelance')}</span>
               </div>
               <div className="flex items-center space-x-3 mb-2 sm:mb-3">
                 <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
-                <span className="text-gray-800 dark:text-slate-400 text-xs sm:text-sm md:text-base">Open to full-time opportunities</span>
+                <span className="text-gray-800 dark:text-slate-400 text-xs sm:text-sm md:text-base">{t('contact_fulltime')}</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
-                <span className="text-gray-800 dark:text-slate-400 text-xs sm:text-sm md:text-base">Available for consultations</span>
+                <span className="text-gray-800 dark:text-slate-400 text-xs sm:text-sm md:text-base">{t('contact_consultations')}</span>
               </div>
             </div>
 
             {/* Email Card */}
             <div className="text-center md:text-right flex flex-col items-center md:items-end">
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-3 sm:p-4 md:p-6 w-full max-w-xs">
-                <h4 className="text-white font-semibold mb-1 sm:mb-2 text-xs sm:text-sm md:text-base">Email Me</h4>
+                <h4 className="text-white font-semibold mb-1 sm:mb-2 text-xs sm:text-sm md:text-base">{t('contact_email_me')}</h4>
                 <a
                   href="mailto:sunhare.p.2240@gmail.com"
                   className="text-white text-xs sm:text-base md:text-lg break-all hover:underline transition-all duration-300"
@@ -55,14 +57,14 @@ const Contact = () => {
               </div>
 
               <p className="text-gray-700 dark:text-slate-400 text-xs sm:text-sm mt-3 sm:mt-4 mb-2">
-                I typically respond within 24 hours
+                {t('contact_response_time')}
               </p>
 
               <a
                 href="mailto:sunhare.p.2240@gmail.com"
                 className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg text-xs sm:text-sm md:text-base font-medium"
               >
-                Send Email
+                {t('contact_send_email')}
               </a>
             </div>
           </div>
@@ -71,9 +73,9 @@ const Contact = () => {
         {/* Info Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {[
-            ['Response Time', 'Usually within 24 hours'],
-            ['Preferred Contact', 'Email for detailed discussions'],
-            ['Time Zone', 'IST (GMT+5:30)']
+            [t('contact_response_time_title'), t('contact_response_time_value')],
+            [t('contact_preferred_contact_title'), t('contact_preferred_contact_value')],
+            [t('contact_timezone_title'), t('contact_timezone_value')]
           ].map(([title, desc], index) => (
             <div
               key={index}
