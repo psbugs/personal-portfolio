@@ -84,13 +84,13 @@ const Projects = () => {
   }, []);
 
   return (
-    <section id="projects" className="py-20 px-6 bg-white dark:bg-slate-800/30 transition-colors duration-500">
+    <section id="projects" className="py-12 sm:py-20 px-4 sm:px-6 bg-white dark:bg-slate-800/30 transition-colors duration-500">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+        <div className="text-center mb-8 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
             Featured Projects
           </h2>
-          <p className="text-xl text-gray-700 dark:text-slate-400 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-slate-400 max-w-2xl mx-auto">
             Here are some of my recent projects that showcase my skills and passion for development
           </p>
         </div>
@@ -98,40 +98,40 @@ const Projects = () => {
         {loading ? (
           <ProjectSkeleton count={projects.length} />
         ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="bg-gray-100 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-200 dark:border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 hover:scale-105 group"
+                className="bg-gray-100 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-200 dark:border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 hover:scale-105 group flex flex-col"
               >
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden h-40 sm:h-48">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent dark:from-slate-900/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
 
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                <div className="p-4 sm:p-6 flex-1 flex flex-col">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-700 dark:text-slate-400 mb-4 text-sm leading-relaxed">
+                  <p className="text-gray-700 dark:text-slate-400 mb-4 text-xs sm:text-sm leading-relaxed flex-1">
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="flex items-center gap-1 px-3 py-1 bg-blue-100 dark:bg-blue-600/20 text-blue-800 dark:text-blue-300 rounded-full text-xs font-medium"
+                        className="flex items-center gap-1 px-2 sm:px-3 py-1 bg-blue-100 dark:bg-blue-600/20 text-blue-800 dark:text-blue-300 rounded-full text-xs font-medium"
                       >
                         {tech.image && (
                           <img
                             src={tech.image}
                             alt={tech.name}
-                            className="h-4 w-4 object-contain"
+                            className="h-3 sm:h-4 w-3 sm:w-4 object-contain"
                           />
                         )}
                         {tech.name}
@@ -139,23 +139,25 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  <div className="flex space-x-3">
+                  <div className="flex gap-2 sm:gap-3">
                     <a
                       href={project.demoLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg transition-colors duration-300 text-sm"
+                      className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-3 rounded-lg transition-colors duration-300 text-xs sm:text-sm font-medium"
                     >
                       Live Demo
                     </a>
-                    <a
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 border border-gray-300 dark:border-slate-600 hover:border-blue-500 text-gray-800 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 text-center py-2 px-4 rounded-lg transition-colors duration-300 text-sm"
-                    >
-                      GitHub
-                    </a>
+                    {project.githubLink && (
+                      <a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 border border-gray-300 dark:border-slate-600 hover:border-blue-500 text-gray-800 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 text-center py-2 px-3 rounded-lg transition-colors duration-300 text-xs sm:text-sm font-medium"
+                      >
+                        GitHub
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

@@ -70,15 +70,15 @@ const Header = ({ scrollToSection }: HeaderProps) => {
 
   return (
     <header className="fixed top-0 w-full bg-slate-100/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-300 dark:border-slate-700/50 z-40 transition-colors duration-300">
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-3 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
 
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center font-bold text-white text-lg">
+          <div className="flex items-center space-x-2 sm:space-x-3">
+            <div className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center font-bold text-white text-sm sm:text-lg">
               PS
             </div>
-            <span className="text-slate-800 dark:text-white font-semibold text-xl">
+            <span className="text-slate-800 dark:text-white font-semibold text-base sm:text-xl hidden sm:inline">
               Praveen Sunhare
             </span>
           </div>
@@ -138,22 +138,28 @@ const Header = ({ scrollToSection }: HeaderProps) => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-slate-300 dark:border-slate-700/50 pt-4">
-            <div className="flex flex-col space-y-4">
-              <button onClick={() => { scrollToSection('projects'); setIsMenuOpen(false); }} className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 text-left">{t('Projects')}</button>
-              <button onClick={() => { scrollToSection('about'); setIsMenuOpen(false); }} className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 text-left">{t('About')}</button>
-              <button onClick={() => { scrollToSection('contact'); setIsMenuOpen(false); }} className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 text-left">{t('Contact')}</button>
-              <button onClick={handleResumeClick} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors duration-300 text-left w-fit">{t('Resume')}</button>
+          <nav className="md:hidden mt-3 pb-3 border-t border-slate-300 dark:border-slate-700/50 pt-3">
+            <div className="flex flex-col space-y-2">
+              {/* First Row: Projects, About, Contact */}
+              <div className="grid grid-cols-3 gap-2">
+                <button onClick={() => { scrollToSection('projects'); setIsMenuOpen(false); }} className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 py-2 px-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700/50 text-center text-xs sm:text-sm font-medium">{t('Projects')}</button>
+                <button onClick={() => { scrollToSection('about'); setIsMenuOpen(false); }} className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 py-2 px-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700/50 text-center text-xs sm:text-sm font-medium">{t('About')}</button>
+                <button onClick={() => { scrollToSection('contact'); setIsMenuOpen(false); }} className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 py-2 px-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700/50 text-center text-xs sm:text-sm font-medium">{t('Contact')}</button>
+              </div>
 
-              {/* Reusable Language Select for Mobile */}
-              <LanguageSelect extraClass="w-fit" />
+              {/* Second Row: Resume, Language, Theme Toggle */}
+              <div className="grid grid-cols-3 gap-2">
+                <button onClick={handleResumeClick} className="bg-blue-600 hover:bg-blue-700 text-white px-2 py-2 rounded-lg transition-colors duration-300 text-center w-full text-xs sm:text-sm font-medium">{t('Resume')}</button>
 
-              <button
-                onClick={() => setIsDarkMode(!isDarkMode)}
-                className="text-slate-700 dark:text-slate-300 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors duration-300 text-left"
-              >
-                {isDarkMode ? '🌙 Dark' : '☀️ Light'}
-              </button>
+                <LanguageSelect extraClass="w-full text-xs sm:text-sm" />
+
+                <button
+                  onClick={() => setIsDarkMode(!isDarkMode)}
+                  className="text-slate-700 dark:text-slate-300 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors duration-300 py-2 px-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700/50 w-full text-xs sm:text-sm font-medium"
+                >
+                  {isDarkMode ? '🌙' : '☀️'}
+                </button>
+              </div>
             </div>
           </nav>
         )}
