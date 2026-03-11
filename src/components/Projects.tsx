@@ -13,6 +13,23 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "Genix Vista",
+      description:
+        "An audio-based call recording AI web application. A login portal for the Vista enterprise application built by Solugenix, used internally by organizations for business operations like reporting, analytics, or workflow management.",
+      image:
+        "https://apps.solugenix.com/assets/backgrounds/login.jpg",
+      technologies: [
+        { name: "MySQL", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+        { name: "NestJS", image: "https://nestjs.com/logo-small-gradient.0ed287ce.svg" },
+        { name: "Angular", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
+        { name: "Python", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+        { name: "AI" },
+        { name: "NLP" },
+      ],
+      demoLink: "https://apps.solugenix.com/vista/#/auth/login",
+      githubLink: "",
+    },
+    {
       title: "Sentriom",
       description:
         "An in-house AI-based product for Solugenix. A conversational ChatGPT clone supporting file uploads and all OpenAI models in a secure application to leverage AI.",
