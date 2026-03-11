@@ -8,7 +8,18 @@ interface HeaderProps {
 const Header = ({ scrollToSection }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    return localStorage.getItem('theme') === 'dark';
+    // initialize from localStorage, falling back to the OS preference
+    const stored = localStorage.getItem('theme');
+    if (stored) {
+      return stored === 'dark';
+    }
+    // no stored preference, use prefers-color-scheme if available
+    if (typeof window !== 'undefined' && window.matchMedia) {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    // default to light
+    return false;
   });
 
   const { t, i18n } = useTranslation();
@@ -23,7 +34,7 @@ const Header = ({ scrollToSection }: HeaderProps) => {
     { code: 'hi', label: 'Hindi' },
   ];
 
-  // Handle dark/light theme
+  // Handle dark/light theme and keep storage in sync
   useEffect(() => {
     const html = document.documentElement;
     if (isDarkMode) {
@@ -34,6 +45,20 @@ const Header = ({ scrollToSection }: HeaderProps) => {
       localStorage.setItem('theme', 'light');
     }
   }, [isDarkMode]);
+
+  // listen for OS preference changes when user hasn't explicitly picked a theme
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    const handler = (e: MediaQueryListEvent) => {
+      // only update if there's no saved preference
+      if (!localStorage.getItem('theme')) {
+        setIsDarkMode(e.matches);
+      }
+    };
+
+    mq.addEventListener?.('change', handler);
+    return () => mq.removeEventListener?.('change', handler);
+  }, []);
 
   // Handle Resume Button
   const handleResumeClick = () => {
